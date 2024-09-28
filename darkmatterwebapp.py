@@ -66,8 +66,8 @@ with col3:
 with col4:
     st.write("km/s")
 
-L= st.sidebar.number_input("Luminosity",value=20e9,format='%e')
-mlratio =st.sidebar.number_input("Mass to light ratio",value=9.8,format='%e')
+L= st.sidebar.number_input("Luminosity",value=1.5e11,format='%e')
+mlratio =st.sidebar.number_input("Mass to light ratio",value=1.5,format='%e')
 
 #---------------------------------------------------------------------------------------------------------
     # r_kpc = list of r in kpc
