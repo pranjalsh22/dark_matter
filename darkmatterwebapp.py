@@ -86,7 +86,7 @@ uploaded_file = st.sidebar.file_uploader("Choose a text file", type="txt")
 st.sidebar.write("**columns should be named 'radius', 'velocity', and 'error'.")
 #data collection and unit correction
 if uploaded_file is None:
-    r,v,error = createdata( mw.txt )
+    r,v,error = createdata(mw.txt)
 if uploaded_file is not None:
     r,v,error = createdata(uploaded_file)
 if r_in_kpc==True:
