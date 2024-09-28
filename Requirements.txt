@@ -1,0 +1,4 @@
+pandas
+matlotlib
+streamlit
+numpy
