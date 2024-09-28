@@ -77,13 +77,13 @@ mlratio =st.sidebar.number_input("Mass to light ratio",value=9.8,format='%e')
     # rho = list of density in kg/m^2 
     # rho_kpc2 = list of density solar mass/kpc^2
 # File uploader
+"using sample milkyway dataset. upload file and provide asked values to process other dataset"
 uploaded_file = st.sidebar.file_uploader("Choose a text file", type="txt")
 st.sidebar.write("**columns should be named 'radius', 'velocity', and 'error'.")
 #data collection and unit correction
 if uploaded_file is None:
     r,v,error = createdata(mw.txt)
 if uploaded_file is not None:
-    global r, v, error
     r,v,error = createdata(uploaded_file)
 if r_in_kpc==True:
     r_kpc=r
