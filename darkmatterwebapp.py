@@ -89,7 +89,7 @@ if uploaded_file is not None:
     r,v,error = createdata(uploaded_file)
 if error ==[] or error == None:
     error = []
-    for i in len(list(v)):
+    for i in r:
         error.append(0)
 if r_in_kpc==True:
     r_kpc=r
