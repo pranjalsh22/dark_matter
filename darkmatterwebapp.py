@@ -18,6 +18,10 @@ def createdata(file):
     error = None
     if 'error' in df.columns:
         error = df['error']
+    else:
+        error = []
+        for i in len(r):
+            error.append(0)
     return r,v,error
 
 def plot_it(r,v,error,x_label,y_label,title,logscale=False):
