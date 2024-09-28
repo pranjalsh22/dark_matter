@@ -87,7 +87,7 @@ if uploaded_file is None:
     r,v,error = createdata('mw.txt')
 if uploaded_file is not None:
     r,v,error = createdata(uploaded_file)
-if error ==[] or error == None:
+if error == None:
     error = []
     for i in r:
         error.append(0)
