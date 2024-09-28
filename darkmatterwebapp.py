@@ -20,7 +20,7 @@ def createdata(file):
         error = df['error']
     else:
         error = []
-        for i in len(r):
+        for i in len(list(r)):
             error.append(0)
     return r,v,error
 
