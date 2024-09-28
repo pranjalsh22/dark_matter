@@ -87,7 +87,7 @@ if uploaded_file is None:
     r,v,error = createdata('mw.txt')
 if uploaded_file is not None:
     r,v,error = createdata(uploaded_file)
-if error == None:
+if error is None or (isinstance(error, pd.Series) and error.empty):
     error = []
     for i in r:
         error.append(0)
