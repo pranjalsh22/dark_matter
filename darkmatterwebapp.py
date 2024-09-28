@@ -18,10 +18,7 @@ def createdata(file):
     error = None
     if 'error' in df.columns:
         error = df['error']
-    else:
-        error = []
-        for i in len(list(r)):
-            error.append(0)
+    
     return r,v,error
 
 def plot_it(r,v,error,x_label,y_label,title,logscale=False):
@@ -90,6 +87,10 @@ if uploaded_file is None:
     r,v,error = createdata('mw.txt')
 if uploaded_file is not None:
     r,v,error = createdata(uploaded_file)
+if error ==None:
+    error = []
+    for i in len(list(r)):
+        error.append(0)
 if r_in_kpc==True:
     r_kpc=r
     r_si=[i*3.086e+19 for i in r]
