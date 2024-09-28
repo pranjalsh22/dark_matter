@@ -80,24 +80,25 @@ mlratio =st.sidebar.number_input("Mass to light ratio",value=9.8,format='%e')
 uploaded_file = st.sidebar.file_uploader("Choose a text file", type="txt")
 st.sidebar.write("**columns should be named 'radius', 'velocity', and 'error'.")
 #data collection and unit correction
-
+if uploaded_file is None:
+    r,v,error = createdata(mw.txt)
 if uploaded_file is not None:
     global r, v, error
     r,v,error = createdata(uploaded_file)
-    if r_in_kpc==True:
-        r_kpc=r
-        r_si=[i*3.086e+19 for i in r]
-    else:
-        r_kpc=[i*3.241e-20 for i in r]
-        r_si=r
-    if v_in_kms==True:
-        v_kms=v
-        v_si=[i*1e3 for i in v]
-        error_si=[i*1000 for i in error]
-    else:
-        v_kms=[i*1e-3 for i in v]
-        v_si=v
-    del r,v
+if r_in_kpc==True:
+    r_kpc=r
+    r_si=[i*3.086e+19 for i in r]
+else:
+    r_kpc=[i*3.241e-20 for i in r]
+    r_si=r
+if v_in_kms==True:
+    v_kms=v
+    v_si=[i*1e3 for i in v]
+    error_si=[i*1000 for i in error]
+else:
+    v_kms=[i*1e-3 for i in v]
+    v_si=v
+del r,v
     
 plot_it(r_kpc,v_kms,error,'Radius (kPc)','Velocity (km/s)','Galaxy Rotation Curve')
 #---------------------------------------------------------------------------------------------------------
