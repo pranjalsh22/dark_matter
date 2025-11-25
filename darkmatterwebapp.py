@@ -42,8 +42,10 @@ def plot_it(r,v,error,x_label,y_label,title,logscale=False):
 #---------------------------------------------------------------------------------------------------------
 
 # Streamlit app layout
-st.title("study dark matter")
+st.title("Study of Dark Matter")
 st.header("galaxy rotation curve")
+st.write("By Pranjal Sharma")
+st.write("Under the guidance of Dr. C. Konar")
 st.sidebar.write("Upload a text file with galaxy rotaton curve data")
 
 st.sidebar.write("Units used in dataset")
